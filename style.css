@@ -1,0 +1,282 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "poppins";
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --yellow: hsl(52, 100%, 62%);
+  --violet: hsl(285, 91%, 52%);
+  --purple: hsl(268, 47%, 21%);
+  --dark-voilet: hsl(268, 75%, 9%);
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: #2193b0; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #2193b0,
+    #6dd5ed
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #2193b0, #6dd5ed);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.heading {
+  color: white;
+  font-size: 4rem;
+  font-weight: bold;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+  user-select: none;
+  text-transform: uppercase;
+}
+
+.passwordBox {
+  display: flex;
+  background-color: var(--dark-voilet);
+  width: 50rem;
+  height: 5rem;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 3rem;
+  margin: 2rem 0;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 1rem;
+  position: relative;
+}
+
+.passwordBox .password {
+  background: none;
+  outline: none;
+  border: none;
+  user-select: none;
+  font-size: 2rem;
+  color: white;
+}
+
+.passwordBox .password::placeholder {
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  color: var(--yellow);
+}
+
+.passwordBox img {
+  width: 2rem;
+  height: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
+.passwordGenerateBox {
+  background-color: var(--dark-voilet);
+  width: 50rem;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 1rem;
+  padding: 3rem;
+}
+
+.passwordGenerateBox .passwordLengthBox {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.passwordLengthText {
+  color: white;
+  font-size: 2.5rem;
+}
+
+.passwordLength {
+  font-size: 3rem;
+  color: var(--yellow);
+}
+
+.sliderBox {
+  width: 100%;
+  margin: 1.5rem 0 3rem 0;
+}
+
+/* The slider itself */
+.sliderBox {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin: 2rem 0 3rem 0;
+}
+
+.slider {
+  appearance: none;
+  width: 100%;
+  border: none;
+  outline: none;
+  height: 0.75rem;
+  cursor: pointer;
+  background: var(--purple);
+  border-radius: 1rem;
+  background-image: linear-gradient(var(--violet), var(--violet));
+  background-repeat: no-repeat;
+}
+
+.slider::-webkit-slider-thumb {
+  appearance: none;
+}
+
+.slider:focus {
+  outline: none;
+  outline: 2px solid var(--yellow);
+}
+
+.slider::-webkit-slider-thumb {
+  position: relative;
+  z-index: 1;
+  appearance: none;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  background: var(--yellow);
+  cursor: pointer;
+  margin-top: -3px;
+  box-shadow: 0px 0px 20px 0px rgba(255, 229, 61, 0.5);
+  transition: all 100ms ease-in;
+}
+
+.slider::-webkit-slider-thumb:hover {
+  outline: 2px solid var(--yellow);
+  background-color: var(--dark-violet);
+  box-shadow: 0px 0px 25px 5px rgba(255, 229, 61, 0.8);
+}
+
+.slider::-moz-range-thumb {
+  position: relative;
+  z-index: 1;
+  appearance: none;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  background: var(--yellow);
+  box-shadow: 0px 0px 20px 0px rgba(255, 229, 61, 0.5);
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb:hover {
+  outline: 2px solid var(--yellow);
+  background-color: var(--dark-violet);
+  box-shadow: 0px 0px 25px 5px rgba(255, 229, 61, 0.8);
+}
+
+.optionsDiv {
+  width: 100%;
+  margin: 0 0 2.5rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 2rem;
+}
+
+.optionsDiv .check {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 1.5rem;
+}
+
+.optionsDiv .check label {
+  font-size: 1.6rem;
+  color: white;
+}
+
+.optionsDiv .check input {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #2193b0;
+  cursor: pointer;
+  position: relative;
+  border-radius: 0.35rem;
+}
+
+.optionsDiv .check input:checked {
+  background-color: #2193b0;
+}
+
+.optionsDiv .check input:checked::before {
+  position: absolute;
+  content: "✔";
+  color: var(--purple);
+  font-size: 1.6rem;
+  font-weight: 600;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.generateBtn {
+  width: 100%;
+  padding: 1rem 0;
+  background-color: var(--violet);
+  text-align: center;
+  border-radius: 1rem;
+  border: none;
+  border-bottom: 0.8rem solid var(--yellow);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--yellow);
+  font-weight: 600;
+  font-size: 1.8rem;
+}
+
+.generateBtn:hover {
+  cursor: pointer;
+}
+
+@media (max-width: 570px) {
+  .heading {
+    font-size: 3rem;
+    text-align: center;
+  }
+  .passwordBox,
+  .passwordGenerateBox {
+    width: 80%;
+  }
+}
+
+#copy-tooltip {
+  visibility: hidden;
+}
+
+.active {
+  visibility: visible!important;
+  font-size: 1.5rem;
+  color: white;
+  background-color: var(--violet);
+  padding: 1rem 2rem;
+  border-radius: 3rem;
+  position: absolute;
+  top: -70%;
+  left: 82%;
+  animation: copyBtnAnimation;
+  animation-duration: 0.3s;
+  animation-timing-function: ease-out;
+}
+
+@keyframes copyBtnAnimation {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

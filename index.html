@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Password Generator</title>
+  </head>
+  <body>
+    <div id="wrapper">
+      <div class="container">
+        <h1 class="heading">Password Generator</h1>
+        <div class="passwordBox">
+          <input type="text" readonly placeholder="Password" class="password" />
+          <div class="copy-btn-box">
+            <span id="copy-tooltip"></span>
+            <img
+              src="https://codehelp-password-generator.netlify.app/assets/copy.svg"
+              alt="copy"
+              id="copy-btn"
+            />
+          </div>
+        </div>
+
+        <div class="passwordGenerateBox">
+          <div class="passwordLengthBox">
+            <span class="passwordLengthText">Password Length</span>
+            <span class="passwordLength" id="passwordLength">11</span>
+          </div>
+          <div class="sliderBox">
+            <input
+              type="range"
+              min="1"
+              max="20"
+              name="range"
+              class="slider"
+              id="slider"
+            />
+          </div>
+
+          <div class="optionsDiv">
+            <div class="check">
+              <input type="checkbox" name="upperCase" id="upperCase" />
+              <label for="upperCase">Include Uppercase</label>
+            </div>
+            <div class="check">
+              <input type="checkbox" name="lowerCase" id="lowerCase" />
+              <label for="lowerCase">Include Lowercase</label>
+            </div>
+            <div class="check">
+              <input type="checkbox" name="numbers" id="numbers" />
+              <label for="numbers">Include Numbers</label>
+            </div>
+            <div class="check">
+              <input type="checkbox" name="symbols" id="symbols" />
+              <label for="symbols">Include Symbols</label>
+            </div>
+          </div>
+
+          <button class="generateBtn">Generate Password</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
